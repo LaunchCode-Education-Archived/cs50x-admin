@@ -1,5 +1,7 @@
 # CS50x Admin
 
+On this page you will find a few guides for managing CS50x content:
+
 * [Setting up a repo for a hub city](#setting-up-a repo-for-a-hub-city)
 * [Editing a Specific Repo](#editing-a-specific-repo)
 
