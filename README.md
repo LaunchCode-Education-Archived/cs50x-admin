@@ -54,15 +54,65 @@ Next we will generate the course website using Github Pages, and a program calle
 1. Edit the `couscous.yml` file and fill in any placeholders. This is how we customize the course website to reflect our specific city by configuring things like links on the sidebar menu, and giving couscous a reference to our repository.
 2. Still on GitHub, create a new branch called `gh-pages`
 3. Make `gh-pages` the default branch instead of `master`. Do this in Settings / Branches.
-4. On your local machine, go to your repo, pull in changes, then switch to a gh-pages branch (then pull again from the remote gh-pages branch, even though it should be the same, just to be safe)
+4. Over on the generic cs50x-live repo, edit the <a href="https://github.com/LaunchCodeEducation/cs50x-live/blob/master/scripts/update-children.sh" target="_blank">update-children.sh</a> script to include our new repo as a child. Edit this line:
+   ```
+   CHILDREN=("cs50x-stlouis" "cs50x-kansascity" "cs50x-maryville" "cs50x-pleasantville") # add pleasantville here like this
+   ```
+so that the `CHILDREN` array now contains a string with the name of our new repo.
+5. Over on our <a href="https://travis-ci.org/LaunchCodeEducation/cs50x-live/builds/" target="_blank">Travis builds feed</a>, we should now see that `cs50x-live master` is now running its build script.
+6. If all goes well with the build script (green text on Travis), your class website shoudl now be up live! (Though it may take a few minutes to show up). The website will be at education.launchcode.org/cs50x-pleasantville
 
-  ```
-  $ git pull origin master
-  $ git checkout -b gh-pages
-  $ git pull origin gh-pages
-  ```
-6. Next, run our `update-website` shell script which is just a wrapper around the couscous command, `couscous deploy`, which converts all the markdown to html and pushes changes to the remote gh-pages branch:
+***
 
-  ```
-  ./update-website.sh
-  ```
+### Editing a Specific Repo
+
+Let's say we want to add custom content to the website for a particular hub city, such as Pleasantville. For example, if we just created the repo following the steps above, we will still need to add in specific dates to the calendar page on the Pleasantville site.
+
+Let's walk through how to do that:
+
+There are two ways to do this: 
+* editing files directly on GitHub
+* editing files locally
+
+We'll address each separately.
+
+##### Editing Files Driectly on GitHub
+1. Go to the repo, and edit any files you want to change
+2. On your local machine, go to the cs50x-pleasantville repo
+3. Locally, make sure you are on the `gh-pages` branch (create it if you haven't already done so using `-b`):
+   ```
+   $ git checkout -b gh-pages
+   ```
+4. Pull in your changes from the remote:
+   ```
+   $ git pull origin gh-pages
+   ```
+5. Finally, run our `update-website` shell script which is just a wrapper around the couscous command, `couscous deploy`, which converts all the markdown to html and pushes changes to the remote gh-pages branch:
+   ```
+   ./update-website.sh
+   ```
+   
+##### Editing Files Locally
+1. On your local machine, go to the cs50x-pleasantville repo
+2. Locally, make sure you are on the `gh-pages` branch (create it if you haven't already done so using `-b`):
+   ```
+   $ git checkout -b gh-pages
+   ```
+3. Pull in any changes from the remote:
+   ```
+   $ git pull origin gh-pages
+   ```
+4. Check out a new branch to make your changes:
+   ```
+   $ git checkout -b develop
+   ```
+5. Make any changes you want to make
+6. Merge the changes back into the `gh-pages` branch:
+   ```
+   $ git checkout gh-pages 
+   $ git merge develop
+   ```
+7. Finally, run our `update-website` shell script which is just a wrapper around the couscous command, `couscous deploy`, which converts all the markdown to html and pushes changes to the remote gh-pages branch:
+   ```
+   ./update-website.sh
+   ```
