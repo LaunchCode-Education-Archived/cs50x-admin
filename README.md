@@ -1,7 +1,7 @@
 # CS50x Admin
 
-* [Setting up a repo for a hub city](#Setting-up-a repo-for-a-hub-city)
-* [Editing a Specific Repo](#Editing-a-Specific-Repo)
+* [Setting up a repo for a hub city](#setting-up-a repo-for-a-hub-city)
+* [Editing a Specific Repo](#editing-a-specific-repo)
 
 ***
 
