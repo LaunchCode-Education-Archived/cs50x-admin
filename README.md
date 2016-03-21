@@ -1,5 +1,10 @@
 # CS50x Admin
 
+* [Setting up a repo for a hub city](./#Setting up a repo for a hub city)
+* [Editing a Specific Repo](./#Editing a Specific Repo)
+
+***
+
 ### Setting up a repo for a hub city
 
 Let's say LaunchCode is expanding to Pleasantville, USA, and we want to host a CS50x class there.
