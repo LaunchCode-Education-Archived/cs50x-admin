@@ -62,10 +62,13 @@ Next we will generate the course website using Github Pages, and a program calle
 2. Still on GitHub, create a new branch called `gh-pages`
 3. Make `gh-pages` the default branch instead of `master`. Do this in Settings / Branches.
 4. Over on the generic cs50x-live repo, edit the <a href="https://github.com/LaunchCodeEducation/cs50x-live/blob/master/scripts/update-children.sh" target="_blank">update-children.sh</a> script to include our new repo as a child. Edit this line:
+
    ```
    CHILDREN=("cs50x-stlouis" "cs50x-kansascity" "cs50x-maryville" "cs50x-pleasantville") # add pleasantville here like this
    ```
-so that the `CHILDREN` array now contains a string with the name of our new repo.
+   
+   so that the `CHILDREN` array now contains a string with the name of our new repo.
+
 5. Over on our <a href="https://travis-ci.org/LaunchCodeEducation/cs50x-live/builds/" target="_blank">Travis builds feed</a>, we should now see that `cs50x-live master` is now running its build script.
 6. If all goes well with the build script (green text on Travis), your class website shoudl now be up live! (Though it may take a few minutes to show up). The website will be at education.launchcode.org/cs50x-pleasantville
 
