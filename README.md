@@ -1,8 +1,4 @@
-# cs50x-admin
-instructions on how to manage content and systems for CS50x
-
-TODO make this page nicer
-
+# CS50x Admin
 
 ### Setting up a repo for a hub city
 
