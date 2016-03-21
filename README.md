@@ -2,12 +2,12 @@
 
 On this page you will find a few guides for managing CS50x content:
 
-* [Setting up a New Repo for a Hub City](#setting-up-a repo-for-a-hub-city)
+* [Setting up a New Repo for a Hub City](#setting-up-a-new-repo-for-a-hub-city)
 * [Editing a Specific Repo](#editing-a-specific-repo)
 
 ***
 
-### Setting up a repo for a hub city
+### Setting up a New Repo for a Hub City
 
 Let's say LaunchCode is expanding to Pleasantville, USA, and we want to host a CS50x class there.
 
