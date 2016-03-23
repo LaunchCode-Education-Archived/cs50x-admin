@@ -86,7 +86,7 @@ There are two ways to do this:
 
 We'll address each separately.
 
-##### Editing Files Driectly on GitHub
+##### Editing Files Directly on GitHub
 1. Go to the repo, and edit any files you want to change
 2. On your local machine, go to the cs50x-pleasantville repo
 3. Locally, make sure you are on the `gh-pages` branch (create it if you haven't already done so using `-b`):
